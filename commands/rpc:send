@@ -1,0 +1,6 @@
+#!/bin/bash
+exec /usr/bin/bitcoind \
+  --rpcconnect=bitcoind \
+  --rpcuser=bexng \
+  --rpcpassword=8v91gdsfm56pv9mmp6gyfu0iv8t76h6enxlfeexyhe2aa295a4sludb92rmk9r3a \
+  $@

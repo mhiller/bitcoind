@@ -1,0 +1,13 @@
+#!/bin/bash
+
+NETWORK="${NETWORK:-testnet}"
+
+if [ "${NETWORK}" = "testnet" -o "${NETWORK}" = "testnet3" ]; then
+  extra_args="-testnet"
+fi
+
+if [ "${NETWORK}" = "regtest" ]; then
+  extra_args="-regtest"
+fi
+
+exec /usr/bin/bitcoind ${extra_args} -conf=/etc/bitcoin/bitcoin.conf -datadir=/var/lib/bitcoin -printtoconsole $@
